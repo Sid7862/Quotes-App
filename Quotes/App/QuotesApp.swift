@@ -11,7 +11,7 @@ import SwiftUI
 struct QuotesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CustomTabView()
         }
     }
 }
