@@ -12,13 +12,35 @@ struct QuoteCardView: View {
     // MARK: PROPERTIES -
     
     var quoteText: String = ""
+    var author: String = ""
     
     // MARK: BODY -
     
     var body: some View {
-        Text(quoteText)
-            .font(.body)
-            .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+        VStack {
+            HStack {
+                
+                let quoteContent =
+                Text("\" ")
+                    .font(.custom(Constants.fontBlackItalic, size: 25))
+                + Text(quoteText)
+                    .font(.custom(Constants.fontBold, size: 20))
+                
+                quoteContent
+                    .padding(EdgeInsets(top: 15, leading: 15, bottom: 5, trailing: 15))
+                
+                Spacer()
+            }
+            HStack {
+                Spacer()
+                Text("- \(author)")
+                    .font(.custom(Constants.fontItalic, size: 17))
+                    .padding(EdgeInsets(top: 5, leading: 15, bottom: 15, trailing: 15))
+            }
+        }
+        .background(Constants.appSecondary)
+        .cornerRadius(5)
+        .padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
     }
 }
 
@@ -26,7 +48,7 @@ struct QuoteCardView: View {
 
 struct QuoteCardView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteCardView(quoteText: "This is test")
+        QuoteCardView(quoteText: "This is test" , author: "Albert Einstien")
             .previewLayout(.sizeThatFits)
     }
 }
