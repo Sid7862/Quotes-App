@@ -12,10 +12,11 @@ struct AuthorsModel: Decodable , Identifiable {
     let id = UUID()
     let totalCount: Int
     let page: Int
+    let totalPages: Int
     let results: [Author]
     
     enum CodingKeys: String, CodingKey {
-        case totalCount, page , results
+        case totalCount, page , totalPages , results
     }
     
 }

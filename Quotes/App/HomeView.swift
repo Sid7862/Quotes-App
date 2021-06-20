@@ -12,52 +12,41 @@ struct HomeView: View {
     // MARK: PROPERTIES -
     
     @ObservedObject var quotesVM = QuotesViewModel()
-    @ObservedObject var authorsVM = AuthorsViewModel()
     private var gridItemLayout = [GridItem(.flexible())]
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: Constants.fontBlack, size: 20)!]
+        self.quotesVM.fetchQuote(for: 1)
     }
     
     // MARK: BODY -
     
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: gridItemLayout, spacing: 12) {
-                    if let quotes = quotesVM.quoteModel?.results {
-                        ForEach(quotes) { quote in
-                            NavigationLink(destination: QuoteDetailView(data: quote)) {
-                                QuoteCardView(quoteText: quote.content , author: quote.author)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVGrid(columns: gridItemLayout, spacing: 12) {
+                if let quotes = quotesVM.quoteModel?.results {
+                    ForEach(quotes) { quote in
+                        NavigationLink(destination: QuoteDetailView(data: quote)) {
+                            QuoteCardView(quoteText: quote.content , author: quote.author)
                         }
-                        .offset(y: 12)
-                        if let quoteTotalCount = quotesVM.quoteModel?.totalCount {
-                            if quoteTotalCount > quotes.count {
-                                ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle())
-                                    .onAppear(perform: {
-                                        if let page = quotesVM.quoteModel?.page {
-                                            self.quotesVM.fetchQuote(for: page + 1)
-                                        }
-                                    })
-                            }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                    .offset(y: 12)
+                    if let quoteTotalCount = quotesVM.quoteModel?.totalCount {
+                        if quoteTotalCount > quotes.count {
+                            ProgressView()
+                                .padding()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .onAppear(perform: {
+                                    if let page = quotesVM.quoteModel?.page {
+                                        self.quotesVM.fetchQuote(for: page + 1)
+                                    }
+                                })
                         }
                     }
-                } //: LAZYVGRID
-            } //: SCROLLVIEW
-            .navigationBarTitle(Text("Quotes"))
-            .navigationBarTitleDisplayMode(.inline)
-            
-//            .onAppear {
-//                for family in UIFont.familyNames.sorted() {
-//                    let names = UIFont.fontNames(forFamilyName: family)
-//                    print("Family: \(family) Font names: \(names)")
-//                }
-//            }
-            
-        } //: NAVIGATIONVIEW
+                }
+            } //: LAZYVGRID
+        } //: SCROLLVIEW
     }
 }
 

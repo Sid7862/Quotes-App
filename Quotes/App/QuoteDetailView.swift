@@ -38,14 +38,17 @@ struct QuoteDetailView: View {
                 .offset(y: 12)
             CustomTitleView(titleText: "Author")
                 .padding(.top , 20)
-            AuthorNameView(author: data.author)
+            NavigationLink(destination: AuthorDetailView(authorSlug: data.authorSlug)) {
+                AuthorNameView(author: data.author)
+            }
+            .buttonStyle(PlainButtonStyle())
             CustomTitleView(titleText: "Tags")
                 .padding(.top , 8)
             QuoteTagsView(tags: data.tags)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
-        .navigationBarTitle(Text("Quote Detail"))
+        .navigationBarTitle(Text("Quote Details"))
     }
 }
 

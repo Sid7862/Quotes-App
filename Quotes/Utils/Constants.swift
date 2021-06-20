@@ -19,8 +19,10 @@ struct Constants {
     static let get_quote_url = "\(base_url)/quotes?page="
     static let get_tags_url = "\(base_url)/tags"
     static let get_authors_url = "\(base_url)/authors"
+    static let get_author_with_slugname = "\(base_url)/authors?slug="
     static let get_randon_quote_url = "\(base_url)/random"
     static let get_quote_with_id = "\(base_url)/quotes/"
+    static let get_quotes_for_author = "\(base_url)/quotes?author="
     
     /// Custom Font names
     static let fontRegular = "PlayfairDisplay-Regular"

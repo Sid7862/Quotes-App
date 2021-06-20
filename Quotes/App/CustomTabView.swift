@@ -9,23 +9,49 @@ import SwiftUI
 
 struct CustomTabView: View {
     
+    // MARK: PROPERTIES -
+    
+    @State private var selection = 0
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     // MARK: BODY -
     
     var body: some View {
-        TabView {
-            HomeView()
-                .font(.system(size: 30, weight: .bold , design: .rounded))
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("")
+        TabView(selection: $selection) {
+            NavigationView {
+                HomeView()
+                .navigationBarTitle(Text("Quotes"))
+                .navigationBarTitleDisplayMode(.inline)
+            }
+            .tabItem {
+                if selection == 0 {
+                    Image("home-selected")
+                        .renderingMode(.template)
+                } else {
+                    Image("home")
+                        .renderingMode(.template)
                 }
-            ExploreView()
-                .font(.system(size: 30, weight: .bold , design: .rounded))
-                .tabItem {
-                    Image(systemName: "magnifyingglass.circle")
-                    Text("")
-                }
+                Text("")
+            }
+            .tag(0)
+            
+//            NavigationView {
+//                ExploreView()
+//                .navigationBarTitle(Text("Explore"))
+//                .navigationBarTitleDisplayMode(.inline)
+//            }
+//            .tabItem {
+//                if selection == 1 {
+//                    Image(systemName: "house.fill")
+//                } else {
+//                    Image(systemName: "house")
+//                }
+//                Text("")
+//            }
+//            .tag(1)
         }
+        .accentColor(colorScheme == .dark ? .white : .black)
     }
 }
 

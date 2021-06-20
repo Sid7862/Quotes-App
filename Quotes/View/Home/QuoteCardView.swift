@@ -13,6 +13,7 @@ struct QuoteCardView: View {
     
     var quoteText: String = ""
     var author: String = ""
+    var authorVisible: Bool = true
     
     // MARK: BODY -
     
@@ -27,15 +28,17 @@ struct QuoteCardView: View {
                     .font(.custom(Constants.fontBold, size: 20))
                 
                 quoteContent
-                    .padding(EdgeInsets(top: 15, leading: 15, bottom: 5, trailing: 15))
+                    .padding(EdgeInsets(top: 15, leading: 15, bottom: authorVisible ? 5 : 15, trailing: 15))
                 
                 Spacer()
             }
-            HStack {
-                Spacer()
-                Text("- \(author)")
-                    .font(.custom(Constants.fontItalic, size: 17))
-                    .padding(EdgeInsets(top: 5, leading: 15, bottom: 15, trailing: 15))
+            if authorVisible {
+                HStack {
+                    Spacer()
+                    Text("- \(author)")
+                        .font(.custom(Constants.fontItalic, size: 17))
+                        .padding(EdgeInsets(top: 5, leading: 15, bottom: 15, trailing: 15))
+                }
             }
         }
         .background(Constants.appSecondary)

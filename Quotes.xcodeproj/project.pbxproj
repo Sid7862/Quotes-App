@@ -30,6 +30,11 @@
 		44E8039F267DD4DA00D5463B /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E8039E267DD4DA00D5463B /* CustomTitleView.swift */; };
 		44E803A1267DD6C200D5463B /* AuthorNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803A0267DD6C200D5463B /* AuthorNameView.swift */; };
 		44E803A3267DEE7A00D5463B /* QuoteTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803A2267DEE7A00D5463B /* QuoteTagsView.swift */; };
+		44E803A5267EC4B900D5463B /* AuthorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803A4267EC4B900D5463B /* AuthorDetailView.swift */; };
+		44E803A7267ECB7000D5463B /* AuthorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803A6267ECB7000D5463B /* AuthorInfoView.swift */; };
+		44E803A9267ED97200D5463B /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803A8267ED97200D5463B /* InfoCardView.swift */; };
+		44E803AB267EFFC300D5463B /* AuthorQuoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E803AA267EFFC300D5463B /* AuthorQuoteListView.swift */; };
+		44E803AE267F1AD100D5463B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E803AC267F19F200D5463B /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,11 @@
 		44E8039E267DD4DA00D5463B /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
 		44E803A0267DD6C200D5463B /* AuthorNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorNameView.swift; sourceTree = "<group>"; };
 		44E803A2267DEE7A00D5463B /* QuoteTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTagsView.swift; sourceTree = "<group>"; };
+		44E803A4267EC4B900D5463B /* AuthorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorDetailView.swift; sourceTree = "<group>"; };
+		44E803A6267ECB7000D5463B /* AuthorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorInfoView.swift; sourceTree = "<group>"; };
+		44E803A8267ED97200D5463B /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
+		44E803AA267EFFC300D5463B /* AuthorQuoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorQuoteListView.swift; sourceTree = "<group>"; };
+		44E803AC267F19F200D5463B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,8 @@
 				44E8039E267DD4DA00D5463B /* CustomTitleView.swift */,
 				44E803A0267DD6C200D5463B /* AuthorNameView.swift */,
 				44E803A2267DEE7A00D5463B /* QuoteTagsView.swift */,
+				44E803A6267ECB7000D5463B /* AuthorInfoView.swift */,
+				44E803A8267ED97200D5463B /* InfoCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -169,6 +181,8 @@
 			children = (
 				44E8034D267B3D2800D5463B /* HomeView.swift */,
 				44E80395267D9FC100D5463B /* QuoteDetailView.swift */,
+				44E803A4267EC4B900D5463B /* AuthorDetailView.swift */,
+				44E803AA267EFFC300D5463B /* AuthorQuoteListView.swift */,
 				44E8034F267B3D3F00D5463B /* ExploreView.swift */,
 				44E80349267B302600D5463B /* CustomTabView.swift */,
 				44E80336267B2F2200D5463B /* QuotesApp.swift */,
@@ -200,6 +214,7 @@
 		44E80394267D89E400D5463B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				44E803AC267F19F200D5463B /* Launch Screen.storyboard */,
 				44E80393267D885600D5463B /* Info.plist */,
 				44E8033A267B2F2600D5463B /* Assets.xcassets */,
 			);
@@ -267,6 +282,7 @@
 				44E80389267D863B00D5463B /* PlayfairDisplay-Italic.otf in Resources */,
 				44E80388267D863B00D5463B /* PlayfairDisplay-Black.otf in Resources */,
 				44E8033E267B2F2600D5463B /* Preview Assets.xcassets in Resources */,
+				44E803AE267F1AD100D5463B /* Launch Screen.storyboard in Resources */,
 				44E80390267D863B00D5463B /* PlayfairDisplay-BoldItalic.otf in Resources */,
 				44E8038C267D863B00D5463B /* PlayfairDisplay-BlackItalic.otf in Resources */,
 				44E80387267D863B00D5463B /* PlayfairDisplay-Bold.otf in Resources */,
@@ -284,18 +300,22 @@
 			files = (
 				44E8035E267BAE1400D5463B /* AuthorsViewModel.swift in Sources */,
 				44E80360267C350300D5463B /* QuoteCardView.swift in Sources */,
+				44E803A5267EC4B900D5463B /* AuthorDetailView.swift in Sources */,
+				44E803A7267ECB7000D5463B /* AuthorInfoView.swift in Sources */,
 				44E8039F267DD4DA00D5463B /* CustomTitleView.swift in Sources */,
 				44E803A3267DEE7A00D5463B /* QuoteTagsView.swift in Sources */,
 				44E80353267B57BD00D5463B /* QuotesModel.swift in Sources */,
 				44E8034E267B3D2800D5463B /* HomeView.swift in Sources */,
 				44E8034A267B302600D5463B /* CustomTabView.swift in Sources */,
 				44E80358267B663800D5463B /* QuotesViewModel.swift in Sources */,
+				44E803A9267ED97200D5463B /* InfoCardView.swift in Sources */,
 				44E8039D267DCB6300D5463B /* QuoteDetailCardView.swift in Sources */,
 				44E8035C267BACCA00D5463B /* AuthorsModel.swift in Sources */,
 				44E8035A267B6B7200D5463B /* Constants.swift in Sources */,
 				44E803A1267DD6C200D5463B /* AuthorNameView.swift in Sources */,
 				44E80350267B3D3F00D5463B /* ExploreView.swift in Sources */,
 				44E80396267D9FC100D5463B /* QuoteDetailView.swift in Sources */,
+				44E803AB267EFFC300D5463B /* AuthorQuoteListView.swift in Sources */,
 				44E80337267B2F2200D5463B /* QuotesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +456,8 @@
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -470,7 +491,8 @@
 				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
